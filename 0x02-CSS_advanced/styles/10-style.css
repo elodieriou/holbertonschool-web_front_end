@@ -21,19 +21,19 @@ a {
     text-decoration: none;
 }
 
-h1.visually-hidden {
+.visually-hidden {
     display: none;
 }
 
-p.card-category {
+.card-category {
     color: var(--color-primary);
 }
 
-header.section-header {
+.section-header {
     text-align: var(--section-header-align);
 }
 
-p.section-tagline {
+.section-tagline {
     color: var(--color-primary);
 }
 

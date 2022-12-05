@@ -21,27 +21,27 @@ a {
     text-decoration: none;
 }
 
-h1.visually-hidden {
+.visually-hidden {
     display: none;
 }
 
-p.card-category {
+.card-category {
     color: var(--color-primary);
 }
 
-header.section-header {
+.section-header {
     text-align: var(--section-header-align);
 }
 
-h2.section-title {
+.section-title {
     font-family: var(--font-family-title);
     font-size: var(--font-size-xx-large);
     font-weight: var(--font-weight-bold);
     margin: var(--section-title-margin);
-    text-color: var(--section-title-color);
+    color: var(--section-title-color);
 }
 
-p.section-tagline {
+.section-tagline {
     color: var(--color-primary);
     text-transform: var(--section-tagline-transform);
     font-weight: var(--font-weight-bold);

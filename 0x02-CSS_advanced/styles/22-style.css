@@ -69,11 +69,11 @@ a:active {
     background-color: var(--color-light-grey);
 }
 
-h1.visually-hidden {
+.visually-hidden {
     display: none;
 }
 
-p.card-category {
+.card-category {
     color: var(--color-primary);
 }
 
@@ -95,15 +95,15 @@ p.card-category {
     text-align: var(--section-footer-align);
 }
 
-h2.section-title {
+.section-title {
     font-family: var(--font-family-title);
     font-size: var(--font-size-xx-large);
     font-weight: var(--font-weight-bold);
     margin: var(--section-title-margin);
-    text-color: var(--section-title-color);
+    color: var(--section-title-color);
 }
 
-p.section-tagline {
+.section-tagline {
     color: var(--color-primary);
     text-transform: var(--section-tagline-transform);
     font-weight: var(--font-weight-bold);
@@ -139,12 +139,6 @@ ul.row {
 [class^="col"]{
     float: left;
     padding: 0.5rem;
-}
-
-[data-section-theme="dark"] {
-    --text-color: var(--color-white);
-    --section-title-color: var(--color-white);
-    background: var(--color-black);
 }
 
 :root {
@@ -184,6 +178,12 @@ ul.row {
     --nav-item-margin: 0 0 3rem 0;
     --nav-item-link-hover: color-primary;
     --section-tagline-margin: 0;
+}
+
+[data-section-theme="dark"] {
+    --text-color: var(--color-white);
+    --section-title-color: var(--color-white);
+    background: var(--color-black);
 }
 
 .footer {

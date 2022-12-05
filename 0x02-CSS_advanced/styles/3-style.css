@@ -19,14 +19,14 @@ a {
     color: var(--text-color);
 }
 
-h1.visually-hidden {
+.visually-hidden {
     display: none;
 }
 
-p.card-category {
+.card-category {
     color: var(--color-primary);
 }
 
-p.section-tagline {
+.section-tagline {
     color: var(--color-primary);
 }
