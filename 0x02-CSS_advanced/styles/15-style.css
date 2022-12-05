@@ -72,7 +72,7 @@ a:active {
     --color-white: #ffffff;
     --color-light-grey: #f3f3f3;
     --color-dark-grey: #353535;
-    --text-color: color-black;
+    --text-color: var(--color-black);
     --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-family-title: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-size-small: 1.2rem;
@@ -88,5 +88,5 @@ a:active {
     --section-header-align: center;
     --section-tagline-transform: uppercase;
     --section-title-margin: 0;
-    --section-title-color: color-black;
+    --section-title-color: var(--color-black);
 }
