@@ -1,0 +1,23 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: #161616;
+}
+
+a {
+    color: #161616;
+}
+
+h1.visually-hidden {
+    display: none;
+}
+
+p.card-category {
+    color: #D73953;
+}
+
+p.section-tagline {
+    color: #D73953;
+}
