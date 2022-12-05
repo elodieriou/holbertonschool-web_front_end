@@ -9,6 +9,10 @@ body {
     font-size: var(--font-size-medium);
 }
 
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-title);
+}
+
 a {
     color: var(--text-color);
 }
@@ -23,10 +27,6 @@ p.card-category {
 
 p.section-tagline {
     color: var(--color-primary);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-family-title);
 }
 
 :root {
