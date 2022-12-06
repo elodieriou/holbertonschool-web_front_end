@@ -1,3 +1,5 @@
+/* Smooth transition when scrolling */
+
 html {
     scroll-behavior: smooth;
 }
