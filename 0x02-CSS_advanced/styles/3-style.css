@@ -1,11 +1,4 @@
-:root {
-    --color-primary: #d73953;
-    --color-black: #090909;
-    --color-white: #ffffff;
-    --color-light-grey: #f3f3f3;
-    --color-dark-grey: #353535;
-    --text-color: var(--color-black);
-}
+/* Adding root element to custom properties */
 
 html {
     scroll-behavior: smooth;
@@ -29,4 +22,13 @@ a {
 
 .section-tagline {
     color: var(--color-primary);
+}
+
+:root {
+    --color-primary: #d73953;
+    --color-black: #090909;
+    --color-white: #ffffff;
+    --color-light-grey: #f3f3f3;
+    --color-dark-grey: #353535;
+    --text-color: var(--color-black);
 }
