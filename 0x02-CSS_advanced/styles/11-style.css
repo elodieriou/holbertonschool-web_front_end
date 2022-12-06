@@ -1,3 +1,5 @@
+/* Adding more styles to the section tagline */
+
 html {
     scroll-behavior: smooth;
     font-size: 62.5%;
@@ -35,6 +37,7 @@ a {
 
 .section-tagline {
     color: var(--color-primary);
+    font-family: var(--font-family-title);
     text-transform: var(--section-tagline-transform);
     font-weight: var(--font-weight-bold);
 }
