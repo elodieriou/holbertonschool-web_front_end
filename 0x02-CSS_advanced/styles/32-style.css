@@ -248,6 +248,7 @@ a:active {
 
 .section-tagline {
     color: var(--color-primary);
+    font-family: var(--font-family-title);
     text-transform: var(--section-tagline-transform);
     font-weight: var(--font-weight-bold);
     margin: var(--section-tagline-margin);
@@ -291,7 +292,7 @@ ul.row {
     width: 50%;
 }
 
-[class^="col"]{
+[class^="col-"]{
     float: left;
     padding: 0.5rem;
 }
@@ -304,7 +305,7 @@ ul.row {
     --color-dark-grey: #353535;
     --text-color: var(--color-black);
     --font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-family-title: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-family-title: Raleway, "Helvetica Neue", Helvetica, Arial, sans-serif;
     --font-size-small: 1.2rem;
     --font-size-medium: 1.6rem;
     --font-size-large: 1.8rem;
@@ -355,7 +356,7 @@ ul.row {
 [data-section-theme="dark"] {
     --text-color: var(--color-white);
     --section-title-color: var(--color-white);
-    background: var(--color-black);
+    background-color: var(--color-black);
     --button-color: var(--color-white);
 }
 
