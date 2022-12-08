@@ -6,8 +6,10 @@ $letters: a b c d e f g h i j k l m n o p q r s t u v w x y z;
 
 // compare words
 @function compare($str-word-1, $str-word-2, $letters) {
+  $length-word-1: str-length($str-word-1);
+  $length-word-2: str-length($str-word-2);
 
-  @for $i from 1 through min(str-length($str-word-1), str-length($str-word-2)) {
+  @for $i from 1 through min($length-word-1, $length-word-1) {
     $char-word-1: str-slice($str-word-1, $i, $i);
     $char-word-2: str-slice($str-word-2, $i, $i);
 
@@ -15,7 +17,7 @@ $letters: a b c d e f g h i j k l m n o p q r s t u v w x y z;
       @return index($letters, $char-word-1) < index($letters, $char-word-2);
     }
   }
-  @return str-length($str-word-1) < str-length($str-word-2);
+  @return $length-word-1 < $length-word-2;
 }
 
 // swap words
