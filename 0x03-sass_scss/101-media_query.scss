@@ -1,0 +1,10 @@
+/* Assigns declaration using @media */
+$layout-breakpoint: 320px;
+h1 {
+  font-size: 20px;
+  @media screen and (max-width: $layout-breakpoint){
+    & {
+      font-size: 14px;
+    }
+  }
+}
