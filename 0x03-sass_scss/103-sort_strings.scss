@@ -22,12 +22,9 @@ $letters: a b c d e f g h i j k l m n o p q r s t u v w x y z;
 
 // swap words
 @function swap($list-words, $index-a, $index-b) {
-  @if abs($index-a) > length($list-words) or abs($index-b) > length($list-words) {
-    @return $list-words;
-  }
-  $temp: nth($list-words, $index-a);
+  $tmp: nth($list-words, $index-a);
   $list-words: set-nth($list-words, $index-a, nth($list-words, $index-b));
-  $list-words: set-nth($list-words, $index-b, $temp);
+  $list-words: set-nth($list-words, $index-b, $tmp);
   @return $list-words;
 }
 
