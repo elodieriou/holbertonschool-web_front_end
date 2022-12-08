@@ -1,0 +1,19 @@
+/* Assign declarations with more @media */
+$layout-breakpoint-large: 960px;
+$layout-breakpoint-medium: 640px;
+$layout-breakpoint-small: 320px;
+h1 {
+  font-size: 20px;
+  @media screen and (max-width: $layout-breakpoint-large) {
+    font-size: 18px;
+  }
+  @media  screen and (max-width: $layout-breakpoint-medium) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: $layout-breakpoint-small) {
+    font-size: 14px;
+    &.small {
+      color: #1D1D1D;
+    }
+  }
+}
