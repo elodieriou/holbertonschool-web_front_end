@@ -1,0 +1,16 @@
+/* Assigns text color to the html tags body and p and background color to body and h2 */
+$venus-color: #3D3D3D;
+$venus-background-color: #6D6D6D;
+
+body {
+  color: $venus-color;
+  background-color: $venus-background-color;
+}
+
+p {
+  color: $venus-color
+}
+
+h2 {
+  background-color: $venus-background-color;
+}
