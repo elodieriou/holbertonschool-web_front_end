@@ -1,0 +1,4 @@
+/* Sort and prints the variable in the file 103-sort_list.scss */
+@import "103-sort_list";
+@use 'sass:list';
+@debug list.sort($list_to_sort)
