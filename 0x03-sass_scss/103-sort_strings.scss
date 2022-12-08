@@ -1,4 +1,45 @@
-/* Sort and prints the variable in the file 103-sort_list.scss */
+/* Sort strings and prints them */
 @import "103-sort_list";
-@use 'sass:list';
-@debug list.sort($list_to_sort)
+
+// all letters
+$letters: a b c d e f g h i j k l m n o p q r s t u v w x y z;
+
+// compare words
+@function compare($str-word-1, $str-word-2, $letters) {
+
+  @for $i from 1 through min(str-length($str-word-1), str-length($str-word-2)) {
+    $char-word-1: str-slice($str-word-1, $i, $i);
+    $char-word-2: str-slice($str-word-2, $i, $i);
+
+    @if $char-word-1 and $char-word-2 and index($letters, $char-word-1) != index($letters, $char-word-2) {
+      @return index($letters, $char-word-1) < index($letters, $char-word-2);
+    }
+  }
+  @return str-length($str-word-1) < str-length($str-word-2);
+}
+
+// swap words
+@function swap($list-words, $index-a, $index-b) {
+  @if abs($index-a) > length($list-words) or abs($index-b) > length($list-words) {
+    @return $list-words;
+  }
+  $temp: nth($list-words, $index-a);
+  $list-words: set-nth($list-words, $index-a, nth($list-words, $index-b));
+  $list-words: set-nth($list-words, $index-b, $temp);
+  @return $list-words;
+}
+
+// sort words
+@function sort($list-words, $letters) {
+  @for $i from 1 through length($list-words) {
+    @for $j from $i through 1 {
+      @if $j > 1 and compare(nth($list-words, $j), nth($list-words, $j - 1), $letters) {
+        $list-words: swap($list-words, $j, $j - 1);
+      }
+    }
+  }
+  @return $list-words;
+}
+
+// print list
+@debug sort($list_to_sort, $letters);
