@@ -377,6 +377,12 @@ ul.row {
     flex-direction: row-reverse;
 }
 
+/* Section SERVICES
+    ============================= */
+.section-services .row {
+    flex-wrap: wrap;
+}
+
 
 /*** 4. CARD ***/
 
