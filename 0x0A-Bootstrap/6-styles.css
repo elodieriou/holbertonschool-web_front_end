@@ -23,15 +23,16 @@
 .btn-outline-primary:focus,
 .btn-outline-primary:active {
     background-color: #E0003C;
-    color: white;
+    color: white !important;
     border-color: #E0003C;
 }
 
 a.text-dark,
-a.text-dark:hover,
-a.text-dark:focus
+a:hover,
+a:focus
 {
     color: #E0003C !important;
+    text-decoration: none;
 }
 
 .card,
