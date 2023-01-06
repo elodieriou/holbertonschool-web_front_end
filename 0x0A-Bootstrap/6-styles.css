@@ -27,10 +27,11 @@ body .border-bottom {
     border-color: #E0003C;
 }
 
-a,
-a:hover,
-a:focus {
-    color: #E0003C;
+a.text-dark,
+a.text-dark:hover,
+a.text-dark:focus
+{
+    color: #E0003C !important;
 }
 
 .card,
@@ -51,5 +52,5 @@ a:focus {
 }
 
 .text-muted {
-    color: #8C8C8C;
+    color: #8C8C8C !important;
 }
