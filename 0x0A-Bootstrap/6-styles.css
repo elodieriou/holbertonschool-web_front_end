@@ -45,11 +45,13 @@ a:focus
     border-radius: 1rem;
 }
 
+.card-header:first-child {
+    border-radius: calc(1rem - 1px) calc(1rem - 1px) 0 0;
+}
+
 .card-header {
     background-color: #E0003C;
     color: white;
-    border-top-right-radius: 1rem !important;
-    border-top-left-radius: 1rem !important;
 }
 
 .text-muted {
