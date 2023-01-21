@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>Task 7</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"
+            integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+            crossorigin="anonymous">
+    </script>
+    <script type="application/javascript">
+        function createSearchForm() {
+            $("body").append(
+                $("<input>").attr("type", "text"),
+                $("<input>").attr("type", "submit").click(function () {
+                    $('ul').empty();
+                    queryWikipedia($('input:first').val());
+                }),
+                $("<ul></ul>")
+            )
+        }
+        function addNewArticle(id, title, snippet) {
+            $("ul").append(
+                $("<li></li>").append(
+                    $("<p></p>").append(
+                        $("<span></span>").text(`${id} - `).append(
+                            $("<b></b>").text(title)
+                        )
+                    ),
+                    $("<p></p>").append(snippet)
+                )
+            )
+        }
+        function queryWikipedia(search) {
+            const url = "https://en.wikipedia.org/w/api.php"
+            const data = {
+                action: "query",
+                list: "search",
+                srsearch: search,
+                format: "json"
+            }
+            $.ajax({
+                type: "GET",
+                url: `${url}?origin=*`,
+                data: data,
+                success: function(response) {
+                    const search = response.query.search;
+                    for (let i = 0; i < search.length; i++) {
+                        addNewArticle(search[i].pageid, search[i].title, search[i].snippet);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    alert('error');
+                    console.log(`${jqXHR.status}: ${textStatus} - ${errorThrown}`);
+                }
+            });
+        }
+        
+        $(function () {
+
+            createSearchForm();
+
+            // Check if ajax method are loaded
+            /*if (typeof $.ajax === "function") {
+                console.log("jQuery and the ajax method are successfully loaded.");
+            } else {
+                console.log("jQuery is loaded but the ajax method is not available.");
+            }*/
+        })
+    </script>
+
+</head>
+
+<body>
+
+</body>
+
+</html>
