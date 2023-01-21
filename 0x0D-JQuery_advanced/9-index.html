@@ -66,9 +66,9 @@
                     const totalHits = response.query.searchinfo.totalhits;
                     buildPagination(totalHits, data.srlimit, data.sroffset);
                 },
-                error: function (jqXHR, textStatus, errorThrown) {
+                error: function (jqXHR, textStatus) {
                     alert("error");
-                    console.log(`${jqXHR.status}: ${textStatus} - ${errorThrown}`);
+                    console.log(`${jqXHR.status}: ${textStatus}`);
                 }
             });
         }

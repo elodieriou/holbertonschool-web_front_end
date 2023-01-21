@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "Harry Potter à l'école des sorciers",
+      "author": "2001",
+      "id": 2
+    },
+    {
+      "title": "Harry Potter et la Chambre des secrets",
+      "author": "2002",
+      "id": 3
+    },
+    {
+      "title": "Harry Potter et le Prisonnier d'Azkaban",
+      "author": "2004",
+      "id": 4
+    },
+    {
+      "title": "Harry Potter et la Coupe de feu",
+      "author": "2005",
+      "id": 5
+    },
+    {
+      "title": "Harry Potter et l'Ordre du Phénix",
+      "author": "2007",
+      "id": 6
+    },
+    {
+      "title": "Harry Potter et le Prince de sang-mêlé",
+      "author": "2009",
+      "id": 7
+    },
+    {
+      "title": "Harry Potter et les Reliques de la Mort, partie 1",
+      "author": "2010",
+      "id": 8
+    },
+    {
+      "title": "Harry Potter et les Reliques de la Mort, partie 2",
+      "author": "2011",
+      "id": 9
+    },
+    {
+      "title": "Yes, I'm a fan of Harry Potter!",
+      "author": "Élodie RIOU",
+      "id": 10
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
