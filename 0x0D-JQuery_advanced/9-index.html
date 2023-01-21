@@ -4,17 +4,22 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Task 8</title>
+    <title>Task 9</title>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
             crossorigin="anonymous">
     </script>
+    <style>
+        .loading {
+            opacity: 0.2;
+        }
+    </style>
     <script type="application/javascript">
         function createSearchForm() {
             $("body").append(
                 $("<input>").attr("type", "text"),
                 $("<input>").attr("type", "submit").click(function () {
-                    queryWikipedia($('input:first').val());
+                    queryWikipedia($("input:first").val());
                 }),
                 $("<ul></ul>"),
                 $("<ul></ul>").attr("id", "pagination").css({display: "flex", listStyle: "none"})
@@ -43,12 +48,16 @@
                 sroffset: offset * itemsByPage,
                 srlimit: itemsByPage
             }
+
+            displayLoading(true);
+
             $.ajax({
                 type: "GET",
                 url: `${url}?origin=*`,
                 data: data,
                 success: function(response) {
                     $("ul:first").empty();
+                    displayLoading(false);
 
                     const search = response.query.search;
                     for (let i = 0; i < search.length; i++) {
@@ -75,6 +84,16 @@
                 if (i === Math.floor(currentOffset / itemsPerPage)) {
                     $("#pagination > li:last").css({fontWeight: "bold"});
                 }
+            }
+        }
+
+        function displayLoading(loading) {
+            if (loading === true) {
+                $("ul:first").wrap("<div></div>");
+                $("div").attr("class", "loading");
+            }
+            else {
+                $("ul:first").unwrap();
             }
         }
         
