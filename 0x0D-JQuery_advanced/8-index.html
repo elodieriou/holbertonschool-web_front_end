@@ -71,7 +71,7 @@
                     $('ul:first').empty();
                     queryWikipedia($('input:first').val(), i)}));
 
-                if (i === Math.floor(currentOffset / 10)) {
+                if (i === Math.floor(currentOffset / itemsPerPage)) {
                     $('#pagination > li:last').css({fontWeight: "bold"});
                 }
             }
