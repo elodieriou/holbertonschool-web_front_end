@@ -13,7 +13,7 @@
 
         const URL = "http://localhost:3000/posts";
         function addPostRow(data) {
-            $("body").append(
+            $("form").after(
                 $("<p></p>").attr("id", `row-${data.id}`).append(
                     $("<span></span>").text("(delete)").css("cursor", "pointer").click(function () {
                         deletePost(data.id);
