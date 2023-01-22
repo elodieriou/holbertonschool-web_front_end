@@ -4,7 +4,7 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>Task 11</title>
+    <title>Task 12</title>
     <script src="https://code.jquery.com/jquery-3.6.3.min.js"
             integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
             crossorigin="anonymous">
@@ -60,7 +60,8 @@
                         $("<label></label>").attr("for", "title").text("Title"),
                         $("<textarea>").attr("id", "title")
                     ),
-                    $("<input>").attr("type", "submit").click(function () {
+                    $("<input>").attr("type", "submit").click(function (event) {
+                        event.preventDefault();
                         sendForm();
                     })
                 )
@@ -68,9 +69,9 @@
         }
 
         function sendForm() {
-            $("form").after(
-                $("<p></p>").text("About to send the query to the API")
-            );
+            const message = $("<p></p>").text("About to send the query to the API");
+            $("form").after(message);
+
             const data = {
                 author: $("#author").val(),
                 title: $("#title").val()
@@ -82,6 +83,7 @@
                 data: data,
                 success: function (data) {
                     addPostRow(data);
+                    message.remove();
                 },
                 error: function () {
                     alert("Error sending the POST query");
@@ -110,7 +112,7 @@
                 }
             });
         }
-        
+
         $(function () {
             listPosts();
             buildForm();
