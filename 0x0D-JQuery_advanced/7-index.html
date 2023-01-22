@@ -50,9 +50,9 @@
                         addNewArticle(search[i].pageid, search[i].title, search[i].snippet);
                     }
                 },
-                error: function (jqXHR, textStatus, errorThrown) {
+                error: function (jqXHR, textStatus) {
                     alert('error');
-                    console.log(`${jqXHR.status}: ${textStatus} - ${errorThrown}`);
+                    console.log(`${jqXHR.status}: ${textStatus}`);
                 }
             });
         }
