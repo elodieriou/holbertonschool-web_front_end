@@ -49,6 +49,16 @@
       "title": "Yes, I'm a fan of Harry Potter!",
       "author": "Élodie RIOU",
       "id": 10
+    },
+    {
+      "title": "Les Animaux fantastiques",
+      "author": "2016",
+      "id": 11
+    },
+    {
+      "title": "Les Crimes de Grindelwald",
+      "author": "2018",
+      "id": 12
     }
   ],
   "comments": [
