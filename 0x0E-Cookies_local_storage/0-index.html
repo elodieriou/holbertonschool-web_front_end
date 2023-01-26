@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Create a basic cookie">
+    <meta name="author" content="Élodie Riou">
+    <title>Task 0</title>
+    <script type="application/javascript">
+        function setCookies() {
+            document.cookie = `firstname=${document.getElementById("firstname").value}`;
+            document.cookie = `email=${document.getElementById("email").value}`;
+        }
+        
+        function showCookies() {
+            let p = document.createElement("p");
+            p.innerHTML = `Cookies: ${document.cookie}`;
+            document.body.appendChild(p);
+        }
+    </script>
+</head>
+<body>
+<h1>Login to the website</h1>
+<form>
+    <input type="text" id="firstname" placeholder="Firstname">
+    <input type="text" id="email" placeholder="Email">
+    <button type="submit" onclick="setCookies()">Log me in</button>
+</form>
+<h1>Cookies</h1>
+<button type="submit" onclick="showCookies()">Show the cookies</button>
+</body>
+</html>
