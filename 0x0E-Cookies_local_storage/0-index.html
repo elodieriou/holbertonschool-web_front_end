@@ -6,18 +6,6 @@
     <meta name="description" content="Create a basic cookie">
     <meta name="author" content="Élodie Riou">
     <title>Task 0</title>
-    <script type="application/javascript">
-        function setCookies() {
-            document.cookie = `firstname=${document.getElementById("firstname").value}`;
-            document.cookie = `email=${document.getElementById("email").value}`;
-        }
-        
-        function showCookies() {
-            let p = document.createElement("p");
-            p.innerHTML = `Cookies: ${document.cookie}`;
-            document.body.appendChild(p);
-        }
-    </script>
 </head>
 <body>
 <h1>Login to the website</h1>
@@ -28,5 +16,17 @@
 </form>
 <h1>Cookies</h1>
 <button type="submit" onclick="showCookies()">Show the cookies</button>
+<script type="application/javascript">
+    function setCookies() {
+        document.cookie = `firstname=${document.getElementById("firstname").value}`;
+        document.cookie = `email=${document.getElementById("email").value}`;
+    }
+
+    function showCookies() {
+        let p = document.createElement("p");
+        p.innerHTML = `Cookies: ${document.cookie}`;
+        document.body.appendChild(p);
+    }
+</script>
 </body>
 </html>

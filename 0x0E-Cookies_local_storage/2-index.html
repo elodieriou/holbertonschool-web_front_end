@@ -6,35 +6,6 @@
     <meta name="description" content="Create a basic cookie">
     <meta name="author" content="Élodie Riou">
     <title>Task 2</title>
-    <script type="application/javascript">
-        function setCookies() {
-            let date = new Date();
-            date.setTime(date.getTime() + (10 * 24 * 60 * 60 * 1000));
-            const expiration = `expires=${date.toUTCString()}`;
-            const firstnameValue = `firstname=${document.getElementById("firstname").value}`;
-            const emailValue = `email=${document.getElementById("email").value}`;
-
-            document.cookie = `${firstnameValue}; ${expiration}; path=/`;
-            document.cookie = `${emailValue}; ${expiration}; path=/`;
-        }
-
-        function showCookies() {
-            let p = document.createElement("p");
-            p.innerHTML = `Email: ${getCookie("email")} - Firstname: ${getCookie("firstname")}`;
-            document.body.appendChild(p);
-        }
-
-        function getCookie(name) {
-            let elements = document.cookie.split(";");
-            for (let i = 0; i < elements.length; i++) {
-                let nameCookie = elements[i].split("=")
-                if (nameCookie[0].trim() === name) {
-                    return nameCookie[1];
-                }
-            }
-            return "";
-        }
-    </script>
 </head>
 <body>
 <h1>Login to the website</h1>
@@ -45,5 +16,34 @@
 </form>
 <h1>Cookies</h1>
 <button type="submit" onclick="showCookies()">Show the cookies</button>
+<script type="application/javascript">
+    function setCookies() {
+        let date = new Date();
+        date.setTime(date.getTime() + (10 * 24 * 60 * 60 * 1000));
+        const expiration = `expires=${date.toUTCString()}`;
+        const firstnameValue = `firstname=${document.getElementById("firstname").value}`;
+        const emailValue = `email=${document.getElementById("email").value}`;
+
+        document.cookie = `${firstnameValue}; ${expiration}; path=/`;
+        document.cookie = `${emailValue}; ${expiration}; path=/`;
+    }
+
+    function showCookies() {
+        let p = document.createElement("p");
+        p.innerHTML = `Email: ${getCookie("email")} - Firstname: ${getCookie("firstname")}`;
+        document.body.appendChild(p);
+    }
+
+    function getCookie(name) {
+        let elements = document.cookie.split(";");
+        for (let i = 0; i < elements.length; i++) {
+            let nameCookie = elements[i].split("=")
+            if (nameCookie[0].trim() === name) {
+                return nameCookie[1];
+            }
+        }
+        return "";
+    }
+</script>
 </body>
 </html>
