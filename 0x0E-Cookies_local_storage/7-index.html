@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Create a basic cookie">
+    <meta name="author" content="Élodie Riou">
+    <title>Task 7</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script type="application/javascript">
+    const availableItems = ['Shampoo', 'Soap', 'Spong', 'Water'];
+    if (typeof(sessionStorage) === 'undefined') {
+        alert("Sorry, your browser does not support Web storage. Try again with a better one");
+    }
+    else {
+        createStore();
+        displayCart();
+    }
+    
+    function getCartFromStorage() {
+        const cart = sessionStorage.getItem("cart");
+        if (cart !== null) {
+            return JSON.parse(cart);
+        }
+        else {
+            return {};
+        }
+    }
+
+    function addItemToCart(item) {
+        let cart = getCartFromStorage();
+        if (item in cart) {
+            cart[item]++;
+        }
+        else {
+            cart[item] = 1;
+        }
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+    }
+
+    function removeItemFromCart(item) {
+        let cart = getCartFromStorage();
+        if (item in cart) {
+            delete cart[item];
+        }
+        sessionStorage.setItem("cart", JSON.stringify(cart));
+        displayCart();
+    }
+
+    function clearCart() {
+        sessionStorage.clear();
+        displayCart();
+    }
+
+    function createStore() {
+
+        const h2 = document.createElement("h2");
+        h2.innerHTML = "Available products:";
+        document.body.appendChild(h2);
+
+        const ul = document.createElement("ul");
+        for (let i = 0; i < availableItems.length; i++) {
+            const li = document.createElement("li");
+            const item = availableItems[i];
+            li.innerHTML = item;
+            ul.append(li);
+            li.onclick = function () {
+                addItemToCart(item);
+            }
+        }
+        document.body.appendChild(ul);
+    }
+
+    function displayCart() {
+
+        const h2 = document.getElementById("title-cart");
+        if (h2 !== null) {
+            h2.remove();
+        }
+
+        const newh2 = document.createElement("h2");
+        newh2.setAttribute("id", "title-cart")
+        newh2.innerHTML = "Your cart:";
+        document.body.appendChild(newh2);
+
+        const div = document.getElementById("cart");
+        if (div !== null) {
+            div.remove();
+        }
+
+        const newDiv = document.createElement("div");
+        newDiv.setAttribute("id", "cart");
+        document.body.appendChild(newDiv);
+
+        updateCart();
+    }
+
+    function updateCart() {
+        const divCart = document.getElementById("cart");
+        const ulCart = document.createElement("ul");
+        const cart = getCartFromStorage();
+        const lenCart = Object.keys(cart).length;
+
+        if (lenCart > 0) {
+            const liClear = document.createElement("li");
+            liClear.innerHTML = "Clear my cart";
+            ulCart.append(liClear);
+            liClear.onclick = function () {
+                clearCart();
+            }
+
+            for (let item in cart) {
+                const remove = document.createElement("a");
+                remove.innerHTML = "(remove)";
+                remove.onclick = function () {
+                    removeItemFromCart(item);
+                }
+
+                const liItem = document.createElement('li');
+                liItem.innerHTML = `${item} X ${cart[item]} ${remove}`;
+                liItem.append(remove)
+                ulCart.append(liItem);
+            }
+        }
+        else {
+            const emptyCart = document.createElement("li");
+            emptyCart.innerHTML = "Your cart is empty";
+            ulCart.appendChild(emptyCart);
+        }
+        divCart.appendChild(ulCart);
+    }
+</script>
+</body>
+</html>
