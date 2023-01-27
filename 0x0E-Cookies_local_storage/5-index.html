@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Create a basic cookie">
+    <meta name="author" content="Élodie Riou">
+    <title>Task 5</title>
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+<script type="application/javascript">
+    const availableItems = ['Shampoo', 'Soap', 'Spong', 'Water'];
+    if (typeof(localStorage) === 'undefined') {
+        alert("Sorry, your browser does not support Web storage. Try again with a better one");
+    }
+    else {
+        createStore();
+        displayCart();
+    }
+
+    function addItemToCart(item) {
+        localStorage.setItem(item, true);
+    }
+
+    function createStore() {
+        const ul = document.createElement("ul");
+
+        for (let i = 0; i < availableItems.length; i++) {
+            const li = document.createElement("li");
+            const item = availableItems[i];
+            li.innerHTML = item;
+            ul.append(li);
+            li.onclick = function () {
+                addItemToCart(item);
+            }
+        }
+        document.body.appendChild(ul);
+    }
+
+    function displayCart() {
+        const len = localStorage.length
+        if (len > 0) {
+            const p = document.createElement("p");
+            p.innerHTML = `You previously had ${len} items in your cart`;
+            document.body.appendChild(p);
+        }
+    }
+</script>
+</body>
+</html>
